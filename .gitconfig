@@ -1,4 +1,8 @@
+[init]
+        defaultBranch = main
 [commit]
         gpgsign = true
 [push]
         autoSetupRemote = true
+[core]
+        editor = vim
