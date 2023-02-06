@@ -58,6 +58,9 @@ alias grhu="git reset --hard upstream/main"
 alias grmi="git rebase main --interactive"
 alias guo="gfo && grho && gpf && gc main && grho && gc develop"
 
+# git clean local branches - removes local branches no longer on origin
+alias gclb="git fetch -p && for branch in $(git for-each-ref --format '%(refname) %(upstream:track)' refs/heads | awk '$2 == "[gone]" {sub("refs/heads/", "", $1); print $1}'); do git branch -D $branch; done"
+
 # npm
 alias nr="npm run"
 alias ns="npm start"
