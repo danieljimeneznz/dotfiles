@@ -58,5 +58,5 @@ format = "[\\($env_value\\)]($style) "
 
 [kubernetes]
 style = "bright-red"
-format = "[kube:\\($context\\)]($style) "
+format = "[kube:\\($context(/$namespace)\\)]($style) "
 disabled = false
