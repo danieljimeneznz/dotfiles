@@ -60,3 +60,8 @@ format = "[\\($env_value\\)]($style) "
 style = "bright-red"
 format = "[kube:\\($context(/$namespace)\\)]($style) "
 disabled = false
+
+[aws]
+format = 'on [$symbol($profile )(\($region\) )(:$duration )]($style)'
+style = 'bold blue'
+symbol = '🅰 '
