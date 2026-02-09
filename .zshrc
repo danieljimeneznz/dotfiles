@@ -13,6 +13,7 @@
 # export POSTGRES_ROOT="/opt/postgres/12"
 # export LIBFFI_ROOT="$HOMEBREW_DIR/opt/libffi"
 # export TALOS_PRIMARY="192.168.0.1"
+# export BUN_INSTALL="$HOME/.bun"
 
 source $HOME/.env
 
@@ -34,9 +35,13 @@ setopt appendhistory
 
 # core
 alias ll="ls -al"
-alias sed="gsed"
 alias scrcpy="scrcpy"
 alias rosetta="arch -x86_64"
+
+# sed on mac
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  alias sed="gsed"
+fi
 
 # git
 alias g="git"
@@ -76,9 +81,7 @@ alias nrl="npm run lint"
 alias nrt="npm run test"
 alias nrtq="npm run test:quick --"
 alias nrtu="npm run test:unit"
-
-# terraform
-alias tf="terraform"
+alias ncu="npm-check-updates"
 
 # docker
 alias docker="podman"
@@ -90,6 +93,9 @@ alias kctx="kubectx"
 alias kns="kubens"
 alias talosctl="talosctl -e $TALOS_PRIMARY --talosconfig=./talosconfig"
 
+# terraform
+alias tf="terraform"
+
 # allow multitasking on macOS
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
@@ -100,6 +106,7 @@ export GPG_TTY="$(tty)"
 export PATH="$PATH:$JDK_ROOT/bin"
 export PATH="$PATH:$PYENV_ROOT/bin"
 export PATH="$PATH:$RBENV_ROOT/bin"
+export PATH="$PATH:$BUN_INSTALL/bin"
 
 # libffi fixes for ruby
 if [ ! -z "${LIBFFI_ROOT}" ]; then
@@ -164,4 +171,9 @@ fi
 # psql
 if [ ! -z "${POSTGRES_ROOT}" ]; then
   alias psql="$POSTGRES_ROOT/scripts/runpsql.sh"
+fi
+
+# bun
+if [ ! -z "${BUN_INSTALL}" ]; then
+  [ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
 fi
