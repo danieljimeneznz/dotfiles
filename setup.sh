@@ -11,7 +11,6 @@ link() {
 
 # Home directory dotfiles
 link "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc"
-link "$DOTFILES_DIR/.gitconfig" "$HOME/.gitconfig"
 
 # .config files
 link "$DOTFILES_DIR/.config/starship.toml" "$HOME/.config/starship.toml"
