@@ -57,6 +57,8 @@ alias grho="git reset --hard origin/main"
 alias grhu="git reset --hard upstream/main"
 alias grmi="git rebase main --interactive"
 alias guo="gfo && grho && gpf && gc main && grho && gc develop"
+alias gcp="git cherry-pick"
+alias gcpc="git cherry-pick --continue"
 
 # git clean local branches - removes local branches no longer on origin
 gclb() {
@@ -73,10 +75,13 @@ alias nrl="npm run lint"
 alias nrt="npm run test"
 alias nrtq="npm run test:quick --"
 alias nrtu="npm run test:unit"
-alias ncu="ncu -x eslint-config-spoke"
 
 # terraform
 alias tf="terraform"
+
+# docker
+alias docker="podman"
+alias docker-compose="podman compose"
 
 # kubernetes
 alias k="kubectl"
@@ -106,6 +111,31 @@ if [ ! -z "${NVM_ROOT}" ]; then
   export NVM_DIR="$NVM_ROOT"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+  # place this after nvm initialization!
+  autoload -U add-zsh-hook
+
+  load-nvmrc() {
+    local nvmrc_path
+    nvmrc_path="$(nvm_find_nvmrc)"
+
+    if [ -n "$nvmrc_path" ]; then
+      local nvmrc_node_version
+      nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+      if [ "$nvmrc_node_version" = "N/A" ]; then
+        nvm install
+      elif [ "$nvmrc_node_version" != "$(nvm version)" ]; then
+        nvm use
+      fi
+    elif [ -n "$(PWD=$OLDPWD nvm_find_nvmrc)" ] && [ "$(nvm version)" != "$(nvm version default)" ]; then
+      echo "Reverting to nvm default version"
+      nvm use default
+    fi
+  }
+
+  add-zsh-hook chpwd load-nvmrc
+  load-nvmrc
 fi
 
 # gcloud
