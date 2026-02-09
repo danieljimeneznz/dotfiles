@@ -81,7 +81,7 @@ alias tf="terraform"
 # kubernetes
 alias k="kubectl"
 alias kctx="kubectx"
-aliax kns="kubens"
+alias kns="kubens"
 
 # allow multitasking on macOS
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
