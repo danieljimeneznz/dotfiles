@@ -12,6 +12,7 @@
 # export NVM_ROOT="$HOME/.nvm"
 # export POSTGRES_ROOT="/opt/postgres/12"
 # export LIBFFI_ROOT="$HOMEBREW_DIR/opt/libffi"
+# export TALOS_PRIMARY="192.168.0.1"
 
 source $HOME/.env
 
@@ -87,6 +88,7 @@ alias docker-compose="podman compose"
 alias k="kubectl"
 alias kctx="kubectx"
 alias kns="kubens"
+alias talosctl="talosctl -e $TALOS_PRIMARY --talosconfig=./talosconfig"
 
 # allow multitasking on macOS
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
