@@ -37,6 +37,7 @@ setopt appendhistory
 alias ll="ls -al"
 alias scrcpy="scrcpy"
 alias rosetta="arch -x86_64"
+alias oc="opencode"
 
 # sed on mac
 if [[ "$OSTYPE" == "darwin"* ]]; then

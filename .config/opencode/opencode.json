@@ -3,17 +3,29 @@
   "plugin": [
     "opencode-anthropic-auth@latest"
   ],
-  "model": "github-copilot/claude-opus-4.6",
-  "small_model": "github-copilot/claude-haiku-4.5",
+  "model": "github-copilot/gpt-5.2-codex",
+  "small_model": "github-copilot/gpt-5-mini",
   "agent": {
-    "general": {
-      "model": "github-copilot/claude-opus-4.6"
+    "build": {
+      "model": "github-copilot/gpt-5.2-codex"
     },
-    "compaction": {
-      "model": "github-copilot/claude-haiku-4.5",
+    "plan": {
+      "model": "github-copilot/gpt-5.2-codex"
+    },
+    "general": {
+      "model": "github-copilot/gpt-5.2-codex"
     },
     "explore": {
-      "model": "github-copilot/claude-haiku-4.5"
+      "model": "github-copilot/gpt-5-mini"
     },
+    "compaction": {
+      "model": "github-copilot/gpt-5-mini"
+    },
+    "title": {
+      "model": "github-copilot/gpt-5-mini"
+    },
+    "summary": {
+      "model": "github-copilot/gpt-5-mini"
+    }
   }
 }
