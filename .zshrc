@@ -39,9 +39,12 @@ alias scrcpy="scrcpy"
 alias rosetta="arch -x86_64"
 alias oc="opencode"
 
-# sed on mac
+# macos specific setup
 if [[ "$OSTYPE" == "darwin"* ]]; then
+  # sed on mac
   alias sed="gsed"
+  # allow multitasking
+  export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 fi
 
 # git
@@ -97,9 +100,6 @@ alias talosctl="talosctl -e $TALOS_PRIMARY --talosconfig=./talosconfig"
 # terraform
 alias tf="terraform"
 
-# allow multitasking on macOS
-export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
-
 # gpg
 export GPG_TTY="$(tty)"
 
@@ -108,6 +108,7 @@ export PATH="$PATH:$JDK_ROOT/bin"
 export PATH="$PATH:$PYENV_ROOT/bin"
 export PATH="$PATH:$RBENV_ROOT/bin"
 export PATH="$PATH:$BUN_INSTALL/bin"
+export PATH="$PATH:$HOME/.opencode/bin"
 
 # libffi fixes for ruby
 if [ ! -z "${LIBFFI_ROOT}" ]; then
