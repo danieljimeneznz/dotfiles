@@ -1,31 +1,88 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "plugin": [
-    "opencode-anthropic-auth@latest"
+    "opencode-anthropic-auth@latest",
+    "@mohak34/opencode-notifier@latest"
   ],
-  "model": "github-copilot/gpt-5.2-codex",
-  "small_model": "github-copilot/gpt-5-mini",
+  "provider": {
+    "github-copilot": {
+      "models": {
+        "gpt-5.3-codex": {
+          "options": {
+            "reasoningEffort": "xhigh"
+          }
+        },
+      },
+    },
+    "openai": {
+      "models": {
+        "gpt-5.3-codex": {
+          "options": {
+            "reasoningEffort": "xhigh"
+          }
+        }
+      }
+    }
+  },
+  "model": "openai/gpt-5.3-codex",
+  "small_model": "github-copilot/claude-haiku-4.5",
   "agent": {
     "build": {
-      "model": "github-copilot/gpt-5.2-codex"
+      "model": "openai/gpt-5.3-codex",
     },
     "plan": {
-      "model": "github-copilot/gpt-5.2-codex"
+      "model": "github-copilot/claude-opus-4.6",
     },
     "general": {
-      "model": "github-copilot/gpt-5.2-codex"
+      "model": "openai/gpt-5.3-codex",
+      "hidden": true
     },
     "explore": {
-      "model": "github-copilot/gpt-5-mini"
+      "model": "github-copilot/claude-haiku-4.5",
+      "hidden": true
     },
     "compaction": {
-      "model": "github-copilot/gpt-5-mini"
+      "model": "github-copilot/gpt-5-mini",
+      "hidden": true
     },
     "title": {
-      "model": "github-copilot/gpt-5-mini"
+      "model": "github-copilot/gpt-5-mini",
+      "hidden": true
     },
     "summary": {
-      "model": "github-copilot/gpt-5-mini"
+      "model": "github-copilot/gpt-5-mini",
+      "hidden": true
+    },
+    // OpenAgentsControl Agents
+    "OpenCoder": {
+      "model": "openai/gpt-5.3-codex"
+    },
+    "OpenAgent": {
+      "model": "github-copilot/claude-opus-4.6"
+    },
+    "TaskManager": {
+      "model": "github-copilot/claude-opus-4.6",
+      "hidden": true
+    },
+    "ContextScout": {
+      "model": "github-copilot/claude-haiku-4.5",
+      "hidden": true
+    },
+    "ExternalScout": {
+      "model": "github-copilot/claude-haiku-4.5",
+      "hidden": true
+    },
+    "CoderAgent": {
+      "model": "openai/gpt-5.3-codex",
+      "hidden": true
+    },
+    "TestEngineer": {
+      "model": "openai/gpt-5.3-codex",
+      "hidden": true
+    },
+    "CodeReviewer": {
+      "model": "openai/gpt-5.3-codex",
+      "hidden": true
     }
   }
 }
