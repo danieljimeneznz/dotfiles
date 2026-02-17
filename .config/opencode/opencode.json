@@ -11,8 +11,8 @@
           "options": {
             "reasoningEffort": "high"
           }
-        },
-      },
+        }
+      }
     },
     "openai": {
       "models": {
