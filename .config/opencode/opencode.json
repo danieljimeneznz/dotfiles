@@ -13,15 +13,6 @@
           }
         }
       }
-    },
-    "openai": {
-      "models": {
-        "gpt-5.3-codex": {
-          "options": {
-            "reasoningEffort": "xhigh"
-          }
-        }
-      }
     }
   },
   "model": "github-copilot/gemini-3.1-pro-preview",
@@ -31,7 +22,7 @@
       "model": "github-copilot/gemini-3.1-pro-preview",
     },
     "plan": {
-      "model": "github-copilot/claude-opus-4.6",
+      "model": "github-copilot/gemini-3.1-pro-preview",
     },
     "general": {
       "model": "github-copilot/gemini-3.1-pro-preview",
