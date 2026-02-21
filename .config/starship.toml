@@ -1,6 +1,6 @@
 format = "$username@$hostname$directory$git_branch$git_status$git_state$kubernetes$nodejs$python$env_var\\$ "
 add_newline = false
-command_timeout = 1000
+command_timeout = 2000
 
 [username]
 show_always = true
@@ -51,8 +51,7 @@ style = "purple"
 version_format = "$major.minor"
 format = "[\\[$version\\]( \\($virtualenv\\))]($style) "
 
-[env_var]
-variable = "SHELL_ARCH"
+[env_var.SHELL_ARCH]
 style = "yellow"
 format = "[\\($env_value\\)]($style) "
 
