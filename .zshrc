@@ -180,3 +180,6 @@ fi
 if [ ! -z "${BUN_INSTALL}" ]; then
   [ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
 fi
+
+# Shopify Hydrogen alias to local projects
+alias h2='$(npm prefix -s)/node_modules/.bin/shopify hydrogen'
