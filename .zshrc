@@ -109,7 +109,6 @@ export PATH="$PATH:$PYENV_ROOT/bin"
 export PATH="$PATH:$RBENV_ROOT/bin"
 export PATH="$PATH:$BUN_INSTALL/bin"
 export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:$HOME/.opencode/bin"
 
 # libffi fixes for ruby
 if [ ! -z "${LIBFFI_ROOT}" ]; then
