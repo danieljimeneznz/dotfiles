@@ -14,7 +14,5 @@ link "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc"
 
 # .config files
 link "$DOTFILES_DIR/.config/starship.toml" "$HOME/.config/starship.toml"
-link "$DOTFILES_DIR/.config/opencode/opencode.json" "$HOME/.config/opencode/opencode.json"
-link "$DOTFILES_DIR/.config/opencode/tui.json" "$HOME/.config/opencode/tui.json"
 
 echo "Done. Run 'source ~/.zshrc' to reload."
