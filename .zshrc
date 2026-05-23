@@ -79,6 +79,7 @@ gclb() {
 }
 
 # npm
+alias npm="sfw npm"
 alias nr="npm run"
 alias ns="npm start"
 alias nrl="npm run lint"
@@ -86,6 +87,10 @@ alias nrt="npm run test"
 alias nrtq="npm run test:quick --"
 alias nrtu="npm run test:unit"
 alias ncu="npm-check-updates"
+
+# python
+alias pip="sfw pip"
+alias uv="sfw uv"
 
 # docker
 alias docker="podman"
