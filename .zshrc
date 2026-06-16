@@ -86,7 +86,7 @@ alias nrl="npm run lint"
 alias nrt="npm run test"
 alias nrtq="npm run test:quick --"
 alias nrtu="npm run test:unit"
-alias ncu="npm-check-updates"
+alias ncu="npm-check-updates --cooldown 3"
 
 # python
 alias pip="sfw pip"
