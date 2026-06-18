@@ -8,6 +8,7 @@ Personal dotfiles for macOS/POSIX environments.
 |------|-------------|
 | `.zshrc` | Zsh config with aliases (git, npm, k8s, terraform), tool initialization (pyenv, rbenv, nvm, gcloud), and Starship prompt |
 | `.gitconfig` | Git config with GPG signing, vim editor, `main` as default branch |
+| `.claude/CLAUDE.md` | Global Claude Code instructions (git, GitHub, writing style, coding preferences) |
 
 ## Prerequisites
 

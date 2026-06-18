@@ -16,4 +16,7 @@ link "$DOTFILES_DIR/.npmrc" "$HOME/.npmrc"
 # .config files
 link "$DOTFILES_DIR/.config/starship.toml" "$HOME/.config/starship.toml"
 
+# Claude Code
+link "$DOTFILES_DIR/.claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
+
 echo "Done. Run 'source ~/.zshrc' to reload."
